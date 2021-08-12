@@ -30,10 +30,15 @@ const render = function() {
     }
 
     const btnTodoComplete = li.querySelector('.todo-complete');
-
     btnTodoComplete.addEventListener('click', function(){
       item.completed = !item.completed;
       render();
+    });
+
+    const btnTodoRemove = li.querySelector('.todo-remove');
+    btnTodoRemove.addEventListener('click', function(){
+      todoData.splice(item, 1);
+      li.remove();
     });
   });
 
