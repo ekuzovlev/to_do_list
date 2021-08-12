@@ -6,14 +6,7 @@ const todoControl = document.querySelector('.todo-control'),
       todoCompleted = document.querySelector('.todo-completed');
 
       const todoData = [
-        {
-          value: 'Сварить кофе',
-          completed: false
-        },
-        {
-          value: 'Помыть посуду',
-          completed: true
-        }
+
       ];
 
 const render = function() {
@@ -48,8 +41,11 @@ const render = function() {
 
 todoControl.addEventListener('submit', function(event) {
   event.preventDefault();
-
+  if (headerInput.value === '') {
+      return;
+  }
   const newTodo = {
+
     value: headerInput.value,
     completed: false
   };
